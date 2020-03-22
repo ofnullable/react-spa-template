@@ -1,0 +1,42 @@
+{
+  "name": "react-spa-template",
+  "version": "0.0.1",
+  "description": "Template for SPA with react",
+  "main": "index.js",
+  "repository": "https://github.com/ofnullable/react-spa-template",
+  "author": "ofnullable <ofnullable@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "emotion": "^10.0.27",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.1.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.1",
+    "babel-loader": "^8.1.0",
+    "core-js": "^3.6.4",
+    "css-loader": "^3.4.2",
+    "cssnano": "^4.1.10",
+    "html-loader": "^1.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.1",
+    "normalize.css": "^8.0.1",
+    "postcss": "^7.0.27",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "reset-css": "^5.0.1",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.1.3",
+    "terser-webpack-plugin": "^2.3.5",
+    "url-loader": "^4.0.0",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
