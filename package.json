@@ -1,15 +1,17 @@
 {
   "name": "react-spa-template",
   "version": "0.0.1",
-  "description": "Template for SPA with react",
-  "main": "index.js",
+  "description": "React Single Page App template without CRA",
+  "main": "src/ndex.js",
   "repository": "https://github.com/ofnullable/react-spa-template",
   "author": "ofnullable <ofnullable@gmail.com>",
   "license": "MIT",
-  "type": "module",
+  "scripts": {
+    "start": "webpack-dev-server --progress"
+  },
   "dependencies": {
+    "@emotion/core": "^10.0.28",
     "axios": "^0.19.2",
-    "emotion": "^10.0.27",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2"
@@ -29,6 +31,7 @@
     "node-sass": "^4.13.1",
     "normalize.css": "^8.0.1",
     "postcss": "^7.0.27",
+    "postcss-fixes": "^2.0.1",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.7.0",

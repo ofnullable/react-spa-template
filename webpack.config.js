@@ -1,12 +1,11 @@
-import { resolve } from 'path'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
-import TerserWebpackPlugin from 'terser-webpack-plugin'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import { CleanWebpackPlugin } from 'clean-webpack-plugin'
-import { resolve } from 'dns'
+const { resolve } = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TerserWebpackPlugin = require('terser-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const prod = process.env.NODE_ENV === 'production'
-const mode = prod ? 'production' : 'development'
+const prod = process.env.NODE_ENV === 'production';
+const mode = prod ? 'production' : 'development';
 
 const loaders = {
   babel: {
@@ -20,13 +19,8 @@ const loaders = {
     loader: 'html-loader',
     options: { minimize: true },
   },
-  style: [
-    prod ? MiniCssExtractPlugin.loader : 'style-loader',
-    'css-loader',
-    'postcss-loader',
-    'sass-loader',
-  ],
-}
+  style: [prod ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+};
 
 module.exports = {
   mode,
@@ -60,16 +54,13 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebPackPlugin({
+    new HtmlWebpackPlugin({
       template: './public/index.html',
-      favicon: './public/favicon.ico',
       filename: './index.html',
       scriptLoading: 'defer',
       hash: true,
     }),
-    ...(isProd
-      ? [new MiniCssExtractPlugin({ filename: '[name].css?[hash]' })]
-      : []),
+    ...(prod ? [new MiniCssExtractPlugin({ filename: '[name].css?[hash]' })] : []),
   ],
   optimization: {
     minimize: prod,
@@ -87,4 +78,4 @@ module.exports = {
     filename: '[name].js?[hash]',
     chunkFilename: '[name].[id].js?[hash]',
   },
-}
+};
