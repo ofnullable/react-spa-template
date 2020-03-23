@@ -56,6 +56,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './public/index.html',
+      favicon: './public/favicon.ico',
       filename: './index.html',
       scriptLoading: 'defer',
       hash: true,
