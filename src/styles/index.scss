@@ -6,8 +6,9 @@ html {
   font-size: 12px;
 }
 
-h1.title {
-  font-size: 5rem;
-  font-weight: 600;
-  text-align: center;
+html, body, #root {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
