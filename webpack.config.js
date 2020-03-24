@@ -24,7 +24,7 @@ const loaders = {
 
 module.exports = {
   mode,
-  devtool: prod ? 'hidden-source-map' : false,
+  devtool: prod ? false : 'eval-source-map',
   entry: {
     app: resolve(__dirname, 'src/index.js'),
   },
@@ -78,5 +78,9 @@ module.exports = {
     path: resolve(__dirname, 'dist'),
     filename: '[name].js?[hash]',
     chunkFilename: '[name].[id].js?[hash]',
+  },
+  devServer: {
+    host: '0.0.0.0',
+    disableHostCheck: true,
   },
 };
