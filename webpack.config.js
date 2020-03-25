@@ -5,9 +5,11 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const prod = process.env.NODE_ENV === 'production';
-const mode = prod ? 'production' : 'development';
 
 const loaders = {
+  html: {
+    loader: 'html-loader',
+  },
   babel: {
     loader: 'babel-loader',
     options: {
@@ -15,21 +17,19 @@ const loaders = {
       cacheDirectory: !prod,
     },
   },
-  html: {
-    loader: 'html-loader',
-    options: { minimize: true },
-  },
   style: [prod ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
 };
 
 module.exports = {
-  mode,
+  mode: prod ? 'production' : 'development',
   devtool: prod ? false : 'eval-source-map',
   entry: {
-    app: resolve(__dirname, 'src/index.js'),
+    app: resolve(__dirname, 'src/index'),
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    modules: ['node_modules'],
+    mainFiles: ['index'],
+    extensions: ['.js', '.mjs', '.jsx', '.json'],
   },
   module: {
     rules: [
@@ -53,15 +53,17 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: './public/index.html',
-      favicon: './public/favicon.ico',
-      filename: './index.html',
-      scriptLoading: 'defer',
       hash: true,
+      inject: 'body',
+      template: 'public/index.html',
+      favicon: 'public/favicon.ico',
+      minify: {
+        collapseWhitespace: true,
+      },
     }),
-    ...(prod ? [new MiniCssExtractPlugin({ filename: '[name].css?[hash]' })] : []),
+    new CleanWebpackPlugin(),
+    ...(prod ? [new MiniCssExtractPlugin({ filename: 'static/[name].css?[hash]' })] : []),
   ],
   optimization: {
     minimize: prod,
@@ -76,11 +78,7 @@ module.exports = {
   },
   output: {
     path: resolve(__dirname, 'dist'),
-    filename: '[name].js?[hash]',
-    chunkFilename: '[name].[id].js?[hash]',
-  },
-  devServer: {
-    host: '0.0.0.0',
-    disableHostCheck: true,
+    filename: 'static/[name].js?[hash]',
+    chunkFilename: 'static/[name].[id].js?[hash]',
   },
 };
