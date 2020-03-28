@@ -1,14 +1,14 @@
 import React from 'react';
-import { HashRouter } from 'react-router-dom';
 
 import Routes from './routes';
+import AppLayout from './layouts/AppLayout';
 import './styles/index.scss';
 
 function App() {
   return (
-    <HashRouter>
+    <AppLayout>
       <Routes />
-    </HashRouter>
+    </AppLayout>
   );
 }
 
