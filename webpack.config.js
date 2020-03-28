@@ -18,6 +18,13 @@ const loaders = {
     },
   },
   style: [prod ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+  url: {
+    loader: 'url-loader',
+    options: { limit: 8192 },
+  },
+  svg: {
+    loader: '@svgr/webpack',
+  },
 };
 
 module.exports = {
@@ -48,14 +55,17 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png|gif|bmp)$/,
-        use: [{ loader: 'url-loader', options: { limit: 8192 } }],
+        use: [loaders.url],
+      },
+      {
+        test: /\.svg$/,
+        use: [loaders.svg],
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       hash: true,
-      inject: 'body',
       template: 'public/index.html',
       favicon: 'public/favicon.ico',
       minify: {
