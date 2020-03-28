@@ -5,9 +5,15 @@ import { jsx, css } from '@emotion/core';
 
 import LogoIcon from '../assets/star.svg';
 import SunIcon from '../assets/sun.svg';
+import MoonIcon from '../assets/moon.svg';
+import media from '../styles/media';
+import { useThemeContext } from '../contexts/ThemeContext';
 
 const headerStyle = css`
   height: 60px;
+  ${media.medium} {
+    height: 50px;
+  }
 
   & > nav {
     height: 100%;
@@ -41,6 +47,8 @@ const headerStyle = css`
 `;
 
 const Header = () => {
+  const { theme, toggleTheme } = useThemeContext();
+
   return (
     <header css={[headerStyle]}>
       <nav>
@@ -51,7 +59,11 @@ const Header = () => {
           </Link>
         </div>
         <div>
-          <SunIcon className="theme" />
+          {theme === 'light' ? (
+            <SunIcon className="theme" onClick={toggleTheme} />
+          ) : (
+            <MoonIcon className="theme" onClick={toggleTheme} />
+          )}
         </div>
       </nav>
     </header>
