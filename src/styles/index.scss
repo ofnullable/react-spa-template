@@ -4,11 +4,23 @@
 
 html {
   font-size: 12px;
+  font-family: 'Roboto Mono', monospace;
 }
 
-html, body, #root {
+html,
+body,
+#root {
   flex: 1;
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+main {
+  flex: 1 1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
