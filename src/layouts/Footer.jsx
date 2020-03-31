@@ -1,7 +1,7 @@
 import React from 'react';
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
-import GithubIcon from '../assets/github.svg';
+import { ReactComponent as GithubIcon } from '../assets/github.svg';
 
 const footerStyle = css`
   padding: 40px 16px;
@@ -29,7 +29,6 @@ const Footer = () => {
             <GithubIcon className="github" />
           </a>
         </div>
-        <div>footer menus</div>
       </nav>
     </footer>
   );

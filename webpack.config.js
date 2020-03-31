@@ -59,7 +59,7 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        use: [loaders.svg],
+        use: [loaders.svg, loaders.url],
       },
     ],
   },
@@ -73,7 +73,14 @@ module.exports = {
       },
     }),
     new CleanWebpackPlugin(),
-    ...(prod ? [new MiniCssExtractPlugin({ filename: 'static/[name].css?[hash]' })] : []),
+    ...(prod
+      ? [
+          new MiniCssExtractPlugin({
+            filename: 'static/css/[name].[contenthash:8].css',
+            chunkFilename: 'static/css/[name].[contenthash:8].chunk.css',
+          }),
+        ]
+      : []),
   ],
   optimization: {
     minimize: prod,
@@ -88,7 +95,7 @@ module.exports = {
   },
   output: {
     path: resolve(__dirname, 'dist'),
-    filename: 'static/[name].js?[hash]',
-    chunkFilename: 'static/[name].[id].js?[hash]',
+    filename: 'static/js/[name].[contenthash:8].js',
+    chunkFilename: 'static/js/[name].[id].[contenthash:8].chunk.js',
   },
 };

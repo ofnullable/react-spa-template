@@ -1,15 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 
-import LogoIcon from '../assets/star.svg';
-import SunIcon from '../assets/sun.svg';
-import MoonIcon from '../assets/moon.svg';
+import { ReactComponent as LogoIcon } from '../assets/zap.svg';
+import { ReactComponent as SunIcon } from '../assets/sun.svg';
+import { ReactComponent as MoonIcon } from '../assets/moon.svg';
 import media from '../styles/media';
+import { palette } from '../styles/palette';
 import { useThemeContext } from '../contexts/ThemeContext';
 
-const headerStyle = css`
+const headerStyle = isLight => css`
   height: 60px;
   ${media.medium} {
     height: 50px;
@@ -28,38 +29,46 @@ const headerStyle = css`
       height: 100%;
       display: flex;
       align-items: center;
-      color: #ffdd00;
       font-size: 2rem;
       font-weight: bold;
       text-decoration: none;
+      text-transform: uppercase;
+
+      svg {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0.5rem;
+      }
     }
-    svg.logo {
-      width: 2rem;
-      height: 2rem;
-      fill: #ffdd00;
-      margin-right: 0.5rem;
+
+    svg {
+      color: ${isLight ? 'inherit' : palette.yellow[4]};
+      fill: ${isLight ? palette.yellow[6] : palette.yellow[4]};
     }
+
     svg.theme {
       cursor: pointer;
       display: flex;
+      user-select: none;
     }
   }
 `;
 
 const Header = () => {
-  const { theme, toggleTheme } = useThemeContext();
+  const { pathname } = useLocation();
+  const { isLight, toggleTheme } = useThemeContext();
 
   return (
-    <header css={[headerStyle]}>
+    <header css={[headerStyle(isLight)]}>
       <nav>
         <div className="logo">
-          <Link to="/">
-            <LogoIcon className="logo" />
-            LOGO
+          <Link to="/" replace={pathname === '/'}>
+            <LogoIcon />
+            brand
           </Link>
         </div>
         <div>
-          {theme === 'light' ? (
+          {isLight ? (
             <SunIcon className="theme" onClick={toggleTheme} />
           ) : (
             <MoonIcon className="theme" onClick={toggleTheme} />

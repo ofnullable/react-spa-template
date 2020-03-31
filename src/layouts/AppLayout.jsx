@@ -10,7 +10,9 @@ import { useThemeContext } from '../contexts/ThemeContext';
 const globalStyle = theme => css`
   body {
     ${colorMap.base[theme]}
-    transition: background ease 0.3s;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-property: background, color;
   }
 `;
 
