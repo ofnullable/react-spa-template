@@ -48,8 +48,6 @@ const ErrorPageStyle = isLight => css`
 const ErrorPage = () => {
   const { isLight } = useThemeContext();
 
-  console.log(TakenSVG);
-
   return (
     <div css={[ErrorPageStyle(isLight)]}>
       <h1>Page Not Found.</h1>
