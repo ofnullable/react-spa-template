@@ -13,5 +13,9 @@ export default ({ children }) => {
     setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
   }, []);
 
-  return <ThemeContext.Provider value={{ theme, isLight, toggleTheme }}>{children}</ThemeContext.Provider>;
+  return (
+    <ThemeContext.Provider value={{ theme, isLight, toggleTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
 };
