@@ -1,11 +1,19 @@
 {
   "name": "react-spa-template",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "React Single Page App template without CRA",
-  "main": "src/ndex.js",
+  "main": "src/index.js",
   "repository": "https://github.com/ofnullable/react-spa-template",
   "author": "ofnullable <ofnullable@gmail.com>",
   "license": "MIT",
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6"
+  },
+  "bugs": {
+    "url": "http://github.com/ofnullable/react-spa-template/issues",
+    "email": "ofnullable@gmail.com"
+  },
   "scripts": {
     "start": "webpack-dev-server --progress",
     "build": "cross-env NODE_ENV=production webpack -p"
