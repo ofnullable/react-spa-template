@@ -7,7 +7,8 @@
   "author": "ofnullable <ofnullable@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --progress"
+    "start": "webpack-dev-server --progress",
+    "build": "cross-env NODE_ENV=production webpack -p"
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",
@@ -18,14 +19,15 @@
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
     "@babel/preset-react": "^7.9.4",
     "@svgr/webpack": "^5.3.1",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "core-js": "^3.6.4",
-    "css-loader": "^3.4.2",
+    "cross-env": "^7.0.2",
+    "css-loader": "^3.5.1",
     "cssnano": "^4.1.10",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.1",
@@ -42,7 +44,7 @@
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.7.0",
-    "prettier": "^2.0.2",
+    "prettier": "^2.0.4",
     "reset-css": "^5.0.1",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",
