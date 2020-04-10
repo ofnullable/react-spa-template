@@ -1,4 +1,5 @@
-# 🎉 React SPA Template 🎉
+<h1 align="center">🎉 React SPA Template 🎉</h1>
+[![GitHub license](https://img.shields.io/github/license/ofnullable/react-spa-template?style=plastic)](https://github.com/ofnullable/react-spa-template/blob/master/LICENSE)
 
 ## An easy-to-use react template
 
