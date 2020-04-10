@@ -1,6 +1,11 @@
 <h1 align="center">🎉 React SPA Template 🎉</h1>  
 
-[![GitHub license](https://img.shields.io/github/license/ofnullable/react-spa-template)](https://github.com/ofnullable/react-spa-template/blob/master/LICENSE)
+<p align="center">  
+  <img src="https://img.shields.io/github/license/ofnullable/react-spa-template" />
+  <a href="https://github.com/ofnullable/react-spa-template/issues">
+    <img src="https://img.shields.io/github/issues/ofnullable/react-spa-template" />
+  </a>
+</p>
 
 ## An easy-to-use react template
 
