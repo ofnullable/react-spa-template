@@ -10,6 +10,8 @@
 ## An easy-to-use react template
 
 - React Single-Page-Application template without create-react-app
+- Configured with Webpack, Babel, ESLint, Sass, PostCSS and emotion
+- If you need anything else, please contribute or leave an issue!
 
 ## Installation
 ```shell
