@@ -15,8 +15,8 @@
     "email": "ofnullable@gmail.com"
   },
   "scripts": {
-    "start": "webpack-dev-server --progress",
-    "build": "cross-env NODE_ENV=production webpack -p"
+    "start": "NODE_ENV=development webpack-dev-server --progress",
+    "build": "NODE_ENV=production webpack -p"
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",
@@ -27,13 +27,11 @@
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.5",
-    "@babel/preset-react": "^7.9.4",
     "@svgr/webpack": "^5.3.1",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
+    "babel-preset-react-app": "^9.1.2",
     "clean-webpack-plugin": "^3.0.0",
-    "core-js": "^3.6.5",
     "cross-env": "^7.0.2",
     "css-loader": "^3.5.2",
     "cssnano": "^4.1.10",
@@ -64,9 +62,10 @@
   },
   "browserslist": {
     "production": [
-      ">0.2%",
+      ">0.02%",
       "not dead",
-      "not op_mini all"
+      "not op_mini all",
+      "last 3 version"
     ],
     "development": [
       "last 1 chrome version",
