@@ -7,12 +7,12 @@ import Footer from './Footer';
 import colorMap from '../styles/palette';
 import { useThemeContext } from '../contexts/ThemeContext';
 
-const globalStyle = theme => css`
+const globalStyle = (theme) => css`
   body {
     ${colorMap.base[theme]}
     transition-duration: 0.3s;
     transition-timing-function: ease;
-    transition-property: background, color;
+    transition-property: border, background, color;
   }
 `;
 

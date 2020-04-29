@@ -7,7 +7,7 @@ import { palette } from '../styles/palette';
 import { useThemeContext } from '../contexts/ThemeContext';
 import media from '../styles/media';
 
-const ErrorPageStyle = isLight => css`
+const ErrorPageStyle = (isLight) => css`
   flex: 1;
   display: flex;
   flex-direction: column;

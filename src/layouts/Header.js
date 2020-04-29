@@ -10,7 +10,7 @@ import media from '../styles/media';
 import { palette } from '../styles/palette';
 import { useThemeContext } from '../contexts/ThemeContext';
 
-const headerStyle = isLight => css`
+const headerStyle = (isLight) => css`
   height: 60px;
   ${media.medium} {
     height: 50px;
