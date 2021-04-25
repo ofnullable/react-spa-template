@@ -1,6 +1,5 @@
 import React from 'react';
-/** @jsx jsx */
-import { jsx, css } from '@emotion/core';
+import { css } from '@emotion/react';
 import { ReactComponent as GithubIcon } from '../assets/github.svg';
 
 const footerStyle = css`

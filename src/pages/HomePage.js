@@ -1,6 +1,5 @@
 import React from 'react';
-/** @jsx jsx */
-import { jsx, css } from '@emotion/core';
+import { css } from '@emotion/react';
 
 const HomePageStyle = css`
   h1 {

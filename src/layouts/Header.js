@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-/** @jsx jsx */
-import { jsx, css } from '@emotion/core';
+import { css } from '@emotion/react';
 
 import { ReactComponent as LogoIcon } from '../assets/zap.svg';
 import { ReactComponent as SunIcon } from '../assets/sun.svg';
