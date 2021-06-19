@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "React Single Page App template without CRA",
   "main": "src/index.js",
+  "hompage": "https://ofnullable.github.io/react-spa-template",
   "repository": "https://github.com/ofnullable/react-spa-template",
   "author": "ofnullable <ofnullable@gmail.com>",
   "license": "MIT",
@@ -16,7 +17,9 @@
   },
   "scripts": {
     "start": "NODE_ENV=development webpack serve --progress",
-    "build": "NODE_ENV=production webpack -p"
+    "build": "NODE_ENV=production webpack",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/react": "^11.4.0",
@@ -44,6 +47,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "file-loader": "^6.2.0",
+    "gh-pages": "^3.2.2",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.1",
     "mini-css-extract-plugin": "^1.6.0",

@@ -1,4 +1,4 @@
-<h1 align="center">🎉 React SPA Template 🎉</h1>  
+<h1 align="center">🎉 React SPA Template 🎉</h1>
 
 <p align="center">  
   <img src="https://img.shields.io/github/license/ofnullable/react-spa-template" />
@@ -13,7 +13,12 @@
 - Configured with Webpack, Babel, ESLint, Sass, PostCSS and emotion
 - If you need anything else, please contribute or leave an issue!
 
+## Live demo
+
+[https://ofnullable.github.io/react-spa-template](https://ofnullable.github.io/react-spa-template)
+
 ## Installation
+
 ```shell
 # clone this repository
 $ git clone https://github.com/ofnullable/react-spa-template
@@ -25,16 +30,36 @@ $ cd react-spa-template
 $ npm install
 ```
 
-## Command
+## Commands
 
 ### Basic usage
+
 ```shell
 $ npm start
 ```
+
 Run dev server on [http://localhost:8080](http://localhost:8080)
 
 ### Build
+
 ```shell
 $ npm run build
 ```
+
 Creating a Production Build. The build artifacts will be stored in the `dist/` directory.
+
+### Deploy github pages
+
+```json
+# edit package.json
+{
+  ...
+  "hompage": "https://{github username}/github.io/{repository name}",
+}
+```
+
+```shell
+$ npm run deploy
+```
+
+Deploy to github pages
