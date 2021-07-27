@@ -32,7 +32,7 @@ $ npm install
 
 ## Commands
 
-### Basic usage
+### Run dev server
 
 ```shell
 $ npm start
