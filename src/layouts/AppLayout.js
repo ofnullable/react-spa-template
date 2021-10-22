@@ -14,6 +14,10 @@ const globalStyle = (theme) => css`
     transition-timing-function: ease;
     transition-property: border, background, color;
   }
+  main {
+    margin: 0 auto;
+    max-width: 1280px;
+  }
 `;
 
 const AppLayout = ({ children }) => {

@@ -17,12 +17,7 @@ const loaders = {
       cacheDirectory: !prod,
     },
   },
-  style: [
-    prod ? MiniCssExtractPlugin.loader : 'style-loader',
-    'css-loader',
-    'postcss-loader',
-    'sass-loader',
-  ],
+  style: [prod ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
   url: {
     loader: 'url-loader',
     options: { limit: 8192 },

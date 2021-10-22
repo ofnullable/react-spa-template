@@ -20,7 +20,7 @@ const headerStyle = (isLight) => css`
     display: flex;
     padding: 0 12px;
     margin: 0 auto;
-    max-width: 1440px;
+    max-width: 1280px;
     align-items: center;
     justify-content: space-between;
 
