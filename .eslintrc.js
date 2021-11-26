@@ -3,24 +3,27 @@ module.exports = {
     node: true,
     browser: true,
   },
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
   parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 2018,
-    sourceType: 'module',
+    babelOptions: {
+      filename: 'babel.config.js',
+    },
   },
   settings: {
     react: {
       version: 'detect',
     },
   },
-  plugins: ['react', 'react-hooks', 'prettier'],
+  plugins: ['@babel', 'react', 'react-hooks', 'prettier'],
   extends: [
     'eslint:recommended',
     'plugin:prettier/recommended',

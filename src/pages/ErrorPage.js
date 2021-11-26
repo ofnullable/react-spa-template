@@ -21,9 +21,11 @@ const ErrorPageStyle = (isLight) => css`
   }
   img {
     margin: 1rem auto;
-    max-width: 35%;
+    max-width: 60%;
   }
   a {
+    display: block;
+    margin: 1rem auto;
     color: ${isLight ? palette.blue[6] : palette.blue[4]};
   }
 

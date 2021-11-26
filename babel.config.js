@@ -1,5 +1,5 @@
 module.exports = {
-  presets: ['react-app'],
+  presets: ['@babel/preset-react'],
   plugins: [
     [
       '@babel/plugin-transform-react-jsx',
