@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_spa_template=self.webpackChunkreact_spa_template||[]).push([[287],{287:function(e,t,a){a.r(t);a(294);var s=a(944);const c={name:"agvie1",styles:"h1{font-size:5rem;font-weight:600;text-align:center;}"};t.default=()=>(0,s.tZ)("div",{css:[c,"",""],children:(0,s.tZ)("h1",{className:"title",children:"Hello React!"})})}}]);
