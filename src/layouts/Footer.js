@@ -4,6 +4,7 @@ import { ReactComponent as GithubIcon } from '../assets/github.svg';
 
 const footerStyle = css`
   padding: 40px 16px;
+
   & > nav {
     margin: 0 auto;
     max-width: 1280px;

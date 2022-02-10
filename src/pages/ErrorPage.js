@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { css } from '@emotion/react';
-import { default as TakenSVG } from '../assets/undraw_Taken.svg';
-import { palette } from '../styles/palette';
 import { useThemeContext } from '../contexts/ThemeContext';
-import media from '../styles/media';
+import { media } from '../styles/media';
+import { default as TakenSVG } from '../assets/undraw_Taken.svg';
 
-const ErrorPageStyle = (isLight) => css`
+const ErrorPageStyle = (colors) => css`
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -17,16 +16,18 @@ const ErrorPageStyle = (isLight) => css`
     color: red;
     font-size: 3rem;
     font-weight: 600;
-    color: ${isLight ? palette.red[6] : palette.red[5]};
+    color: ${colors.red[5]};
   }
+
   img {
     margin: 1rem auto;
     max-width: 60%;
   }
+
   a {
     display: block;
     margin: 1rem auto;
-    color: ${isLight ? palette.blue[6] : palette.blue[4]};
+    color: ${colors.blue[5]};
   }
 
   ${media.medium} {
@@ -35,10 +36,12 @@ const ErrorPageStyle = (isLight) => css`
       max-width: 70%;
     }
   }
+
   ${media.small} {
     h1 {
       font-size: 2.5rem;
     }
+
     img {
       margin: 2rem auto;
       max-width: 80%;
@@ -47,10 +50,10 @@ const ErrorPageStyle = (isLight) => css`
 `;
 
 const ErrorPage = () => {
-  const { isLight } = useThemeContext();
+  const { colors } = useThemeContext();
 
   return (
-    <div css={[ErrorPageStyle(isLight)]}>
+    <div css={[ErrorPageStyle(colors)]}>
       <h1>Page Not Found.</h1>
       <img src={TakenSVG} alt="" />
       <Link to="/">go Home</Link>
