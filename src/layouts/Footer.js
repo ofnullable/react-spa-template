@@ -1,5 +1,6 @@
 import React from 'react';
 import { css } from '@emotion/react';
+import { useThemeContext } from '../contexts/ThemeContext';
 import { ReactComponent as GithubIcon } from '../assets/github.svg';
 
 const footerStyle = css`
@@ -19,14 +20,22 @@ const footerStyle = css`
   }
 `;
 
+const iconStyle = (color) => css`
+  width: 2rem;
+  height: 2rem;
+  stroke: ${color};
+`;
+
 const Footer = () => {
+  const { isLight } = useThemeContext();
+
   return (
     <footer css={[footerStyle]}>
       <nav>
         <div>{new Date().getFullYear()} &copy; your copyright</div>
         <div>
           <a href="https://github.com/ofnullable/react-spa-template" rel="noopener noreferrer" target="_blank">
-            <GithubIcon className="github" />
+            <GithubIcon css={iconStyle(isLight ? '#000' : '#fff')} className="github" />
           </a>
         </div>
       </nav>
