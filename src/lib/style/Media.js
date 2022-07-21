@@ -2,7 +2,7 @@ const query = (maxWidth) => `
   @media (max-width: ${maxWidth}px)
 `;
 
-export const media = {
+export const Media = {
   xxlarge: query(1920),
   xlarge: query(1440),
   large: query(1200),

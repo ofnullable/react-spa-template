@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { css } from '@emotion/react';
-import { media } from '../styles/media';
+import { Media } from '../lib/style';
 import { useThemeContext } from '../contexts/ThemeContext';
 
 import { ReactComponent as LogoIcon } from '../assets/zap.svg';
 import { ReactComponent as SunIcon } from '../assets/sun.svg';
 import { ReactComponent as MoonIcon } from '../assets/moon.svg';
 
-const headerStyle = (colors, isLight) => css`
+const headerStyle = css`
   height: 60px;
 
-  ${media.medium} {
+  ${Media.medium} {
     height: 50px;
   }
 
@@ -42,8 +42,8 @@ const headerStyle = (colors, isLight) => css`
 
     svg {
       cursor: pointer;
-      color: ${isLight ? 'inherit' : colors.yellow[4]};
-      fill: ${colors.yellow[6]};
+      color: var(--primary);
+      fill: var(--primary);
     }
 
     svg.theme {
@@ -55,10 +55,10 @@ const headerStyle = (colors, isLight) => css`
 
 const Header = () => {
   const { pathname } = useLocation();
-  const { colors, isLight, toggleTheme } = useThemeContext();
+  const { isLight, toggleTheme } = useThemeContext();
 
   return (
-    <header css={[headerStyle(colors, isLight)]}>
+    <header css={[headerStyle]}>
       <nav>
         <div className="logo">
           <Link to="/" replace={pathname === '/'}>
