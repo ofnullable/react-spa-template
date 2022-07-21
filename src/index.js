@@ -1,14 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import { HashRouter } from 'react-router-dom';
-
+import ThemeProvider from './contexts/ThemeContext';
+import App from './App';
 import 'reset-css';
 import 'normalize.css';
-import App from './App';
+import './index.scss';
 
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <HashRouter>
-    <App />
-  </HashRouter>,
-  document.getElementById('root')
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  </HashRouter>
 );

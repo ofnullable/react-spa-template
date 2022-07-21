@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { css } from '@emotion/react';
-import { useThemeContext } from '../contexts/ThemeContext';
-import { media } from '../styles/media';
+import { Media } from '../lib/style';
 import { default as TakenSVG } from '../assets/undraw_Taken.svg';
 
-const ErrorPageStyle = (colors) => css`
+const errorPageWrapper = css`
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -13,10 +12,9 @@ const ErrorPageStyle = (colors) => css`
   justify-content: center;
 
   h1 {
-    color: red;
     font-size: 3rem;
     font-weight: 600;
-    color: ${colors.red[5]};
+    color: var(--text-error);
   }
 
   img {
@@ -27,17 +25,17 @@ const ErrorPageStyle = (colors) => css`
   a {
     display: block;
     margin: 1rem auto;
-    color: ${colors.blue[5]};
+    color: var(--link-primary);
   }
 
-  ${media.medium} {
+  ${Media.medium} {
     img {
       margin: 2rem auto;
       max-width: 70%;
     }
   }
 
-  ${media.small} {
+  ${Media.small} {
     h1 {
       font-size: 2.5rem;
     }
@@ -50,10 +48,8 @@ const ErrorPageStyle = (colors) => css`
 `;
 
 const ErrorPage = () => {
-  const { colors } = useThemeContext();
-
   return (
-    <div css={[ErrorPageStyle(colors)]}>
+    <div css={[errorPageWrapper]}>
       <h1>Page Not Found.</h1>
       <img src={TakenSVG} alt="" />
       <Link to="/">go Home</Link>
