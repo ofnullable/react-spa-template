@@ -20,7 +20,11 @@ const loaders = {
   style: [prod ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
   url: {
     loader: 'url-loader',
-    options: { limit: 8192 },
+    options: {
+      limit: 8192,
+      publicPath: '/',
+      name: 'static/asset/[name]-[hash].[ext]',
+    },
   },
   svg: {
     loader: '@svgr/webpack',
@@ -66,6 +70,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       hash: true,
+      publicPath: '/',
       template: 'public/index.html',
       favicon: 'public/favicon.ico',
       minify: {
@@ -76,8 +81,8 @@ module.exports = {
     ...(prod
       ? [
           new MiniCssExtractPlugin({
-            filename: 'static/css/[name].[contenthash:8].css',
-            chunkFilename: 'static/css/[name].[contenthash:8].chunk.css',
+            filename: 'static/css/[name].[fullhash:8].css',
+            chunkFilename: 'static/css/[name].[fullhash:8].chunk.css',
           }),
         ]
       : []),
@@ -94,8 +99,9 @@ module.exports = {
     ],
   },
   output: {
+    publicPath: '/',
     path: resolve(__dirname, 'dist'),
-    filename: 'static/js/[name].[contenthash:8].js',
-    chunkFilename: 'static/js/[name].[id].[contenthash:8].chunk.js',
+    filename: 'static/js/[name].[fullhash:8].js',
+    chunkFilename: 'static/js/[name].[fullhash:8].chunk.js',
   },
 };
