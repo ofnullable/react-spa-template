@@ -22,7 +22,6 @@ const loaders = {
     loader: 'url-loader',
     options: {
       limit: 8192,
-      publicPath: '/',
       name: 'static/asset/[name]-[hash].[ext]',
     },
   },
@@ -70,7 +69,6 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       hash: true,
-      publicPath: '/',
       template: 'public/index.html',
       favicon: 'public/favicon.ico',
       minify: {
@@ -99,7 +97,6 @@ module.exports = {
     ],
   },
   output: {
-    publicPath: '/',
     path: resolve(__dirname, 'dist'),
     filename: 'static/js/[name].[fullhash:8].js',
     chunkFilename: 'static/js/[name].[fullhash:8].chunk.js',
