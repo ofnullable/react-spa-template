@@ -10,11 +10,10 @@ const loaders = {
   html: {
     loader: 'html-loader',
   },
-  babel: {
-    loader: 'babel-loader',
+  swc: {
+    loader: 'swc-loader',
     options: {
-      compact: false,
-      cacheDirectory: !prod,
+      minify: prod,
     },
   },
   style: [prod ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
@@ -50,7 +49,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        use: [loaders.babel],
+        use: [loaders.swc],
       },
       {
         test: /\.(c|sc|sa)ss$/,
