@@ -10,46 +10,42 @@ import { ReactComponent as MoonIcon } from '../assets/moon.svg';
 
 const headerStyle = css`
   height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0 12px;
+  width: 100%;
+  max-width: 1280px;
 
   ${Media.medium} {
     height: 50px;
   }
 
-  & > nav {
-    height: 100%;
+  a {
+    text-transform: uppercase;
     display: flex;
-    padding: 0 12px;
-    margin: 0 auto;
-    max-width: 1280px;
     align-items: center;
-    justify-content: space-between;
-
-    .logo a {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      font-size: 2rem;
-      font-weight: bold;
-      text-decoration: none;
-      text-transform: uppercase;
-
-      svg {
-        width: 2rem;
-        height: 2rem;
-        margin-right: 0.5rem;
-      }
-    }
+    font-size: 2rem;
+    font-weight: bold;
+    margin-right: 40px;
 
     svg {
-      cursor: pointer;
-      color: var(--primary);
-      fill: var(--primary);
+      width: 2rem;
+      height: 2rem;
+      margin-right: 0.4rem;
     }
+  }
 
-    svg.theme {
-      display: flex;
-      user-select: none;
-    }
+  svg {
+    cursor: pointer;
+    color: var(--primary);
+    fill: var(--primary);
+  }
+
+  svg.theme {
+    display: flex;
+    user-select: none;
   }
 `;
 
@@ -59,21 +55,17 @@ const Header = () => {
 
   return (
     <header css={[headerStyle]}>
-      <nav>
-        <div className="logo">
-          <Link to="/" replace={pathname === '/'}>
-            <LogoIcon />
-            brand
-          </Link>
-        </div>
-        <div>
-          {isLight ? (
-            <SunIcon className="theme" onClick={toggleTheme} />
-          ) : (
-            <MoonIcon className="theme" onClick={toggleTheme} />
-          )}
-        </div>
-      </nav>
+      <Link to="/" replace={pathname === '/'}>
+        <LogoIcon /> brand
+      </Link>
+
+      <div>
+        {isLight ? (
+          <SunIcon className="theme" onClick={toggleTheme} />
+        ) : (
+          <MoonIcon className="theme" onClick={toggleTheme} />
+        )}
+      </div>
     </header>
   );
 };

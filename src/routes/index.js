@@ -1,5 +1,5 @@
-import React, { Suspense, lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { lazy, Suspense } from 'react';
+import { Route, Routes } from 'react-router-dom';
 
 const HomePage = lazy(() => import('../pages/HomePage'));
 const ErrorPage = lazy(() => import('../pages/ErrorPage'));

@@ -3,11 +3,11 @@ const query = (maxWidth) => `
 `;
 
 export const Media = {
-  xxlarge: query(1920),
-  xlarge: query(1440),
-  large: query(1200),
-  medium: query(1024),
-  small: query(768),
   xsmall: query(375),
+  small: query(768),
+  medium: query(1024),
+  large: query(1280),
+  xlarge: query(1440),
+  xxlarge: query(1920),
   custom: query,
 };
