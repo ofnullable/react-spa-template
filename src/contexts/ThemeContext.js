@@ -9,7 +9,9 @@ export const useThemeContext = () => useContext(Context);
 const getPreferColor = () => {
   const stored = Storage.get('theme');
 
-  if (stored) return stored;
+  if (['light', 'dark'].includes(stored)) {
+    return stored;
+  }
 
   if (!window.matchMedia) {
     Storage.set('theme', 'light');
